@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Hacker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="terminal">
+    <h1>Sistema Seguro</h1>
+    
+    <!-- Formulario de inicio de sesión -->
+    <form id="loginForm">
+      <p>Usuario:</p>
+      <input type="text" id="username" placeholder="Ingrese usuario" required>
+      <p>Contraseña:</p>
+      <input type="password" id="password" placeholder="Ingrese contraseña" required>
+      <button type="submit">Ingresar</button>
+    </form>
+    
+    <!-- Formulario para correo o teléfono -->
+    <form id="emailForm" style="display: none;">
+      <p>Ingrese correo electrónico o número de celular:</p>
+      <input type="text" id="contactInfo" placeholder="Correo o número" required>
+      <button type="submit">Continuar</button>
+    </form>
+    
+    <!-- Animación de hackeo -->
+    <div id="hackAnimation" style="display: none;">
+      <p>Hackeando el sistema...</p>
+      <pre id="hackText"></pre>
+      <p id="successMessage" style="display: none;">
+        <a href="https://www.google.com/maps/place/5%C2%B036'39.3%22N+72%C2%B058'55.2%22W/@5.610911,-72.9845732,17z/data=!3m1!4b1!4m4!3m3!8m2!3d5.610911!4d-72.9819983?entry=ttu" target="_blank">
+          Acceder a la ubicación
+        </a>
+      </p>
+    </div>
+
+    <p id="error" style="color: red; display: none;">Usuario o contraseña incorrectos</p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'ramstein' && password === '2580') {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('emailForm').style.display = 'block';
+      } else {
+        document.getElementById('error').style.display = 'block';
+      }
+    });
+
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('emailForm').style.display = 'none';
+      document.getElementById('hackAnimation').style.display = 'block';
+
+      const hackText = document.getElementById('hackText');
+      const successMessage = document.getElementById('successMessage');
+      let lines = 0;
+
+      const interval = setInterval(() => {
+        hackText.textContent += `> Ejecutando proceso ${lines + 1}...\n`;
+        lines++;
+        if (lines >= 100) {
+          clearInterval(interval);
+          successMessage.style.display = 'block';
+        }
+      }, 1200); // 1.2 segundos por línea
+    });
+  </script>
+</body>
+</html>

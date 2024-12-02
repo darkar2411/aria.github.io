@@ -1,0 +1,61 @@
+body {
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .terminal {
+    text-align: center;
+  }
+  
+  input {
+    background-color: black;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 5px;
+    margin: 5px 0;
+    width: 80%;
+  }
+  
+  button {
+    background-color: #00ff00;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #007700;
+  }
+  
+  pre {
+    text-align: left;
+    margin: 20px auto;
+    width: 80%;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid #00ff00;
+    max-height: 200px;
+    overflow-y: scroll;
+  }
+  
+  a {
+    color: #00ff00;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  p {
+    margin: 10px 0;
+  }
+  
